@@ -1,16 +1,28 @@
 <template>
-  <Input />
+  <div>
+    <normal-input />
+    <custom-input v-model="searchText" validator-prop="succes" />
+  </div>
 </template>
 
 <script>
-import Input from './components/Input.vue'
+import { defineComponent, ref } from 'vue';
+import NormalInput from './components/Input.vue';
+import CustomInput from './components/CustomInput.vue';
 
-export default {
+export default defineComponent({
   name: 'App',
   components: {
-    Input,
+    NormalInput,
+    CustomInput,
+  },
+  setup() {
+    const searchText = ref('');
+    return {
+      searchText,
+    }
   }
-}
+})
 </script>
 
 <style>
