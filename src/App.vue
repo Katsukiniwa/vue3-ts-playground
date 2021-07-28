@@ -12,7 +12,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, ref, onMounted } from 'vue';
 import axios from 'axios';
 import NormalInput from './components/Input.vue';
@@ -32,7 +32,7 @@ export default defineComponent({
       worker.start();
     }
     
-    const searchText = ref('aaa');
+    const searchText = ref<string>('aaa');
     const sampleText = ref('bbb');
     const getData = async () => {
       const response = await axios.get('/novels');

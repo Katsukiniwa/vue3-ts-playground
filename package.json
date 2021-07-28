@@ -1,5 +1,5 @@
 {
-  "name": "vue-ts-playground",
+  "name": "vue3-ts-playground",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -17,11 +17,12 @@
       "node": true
     },
     "parserOptions": {
-      "parser": "babel-eslint"
+      "parser": "@typescript-eslint/parser"
     },
     "extends": [
       "plugin:vue/vue3-essential",
-      "eslint:recommended"
+      "eslint:recommended",
+      "@vue/typescript"
     ],
     "rules": {},
     "root": true
@@ -30,21 +31,26 @@
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "msw": "^0.33.0",
-    "typescript": "^4.3.5",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "vue-class-component": "^8.0.0-0"
   },
   "devDependencies": {
     "@types/core-js": "^2.5.4",
     "@types/eslint": "^6.8.1",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
     "@vue/test-utils": "^1.2.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
-    "jest": "^27.0.6"
+    "jest": "^27.0.6",
+    "typescript": "~4.1.5"
   },
   "msw": {
     "workerDirectory": "dist"
