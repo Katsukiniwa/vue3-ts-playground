@@ -28,8 +28,7 @@ export default defineComponent({
       }
     }
   },
-  setup(props) {
-    console.dir(props);
+  setup() {
   }
 })
 </script>

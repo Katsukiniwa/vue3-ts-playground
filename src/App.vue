@@ -13,7 +13,8 @@
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, onMounted } from 'vue';
+import axios from 'axios';
 import NormalInput from './components/Input.vue';
 import CustomInput from './components/CustomInput.vue';
 import ModelValueInput from './components/ModelValueInput.vue';
@@ -26,8 +27,19 @@ export default defineComponent({
     ModelValueInput,
   },
   setup() {
+    if (process.env.NODE_ENV === 'development') {
+      const { worker } = require('./mocks/browser');
+      worker.start();
+    }
+    
     const searchText = ref('aaa');
     const sampleText = ref('bbb');
+    const getData = async () => {
+      const response = await axios.get('/novels');
+      console.dir(response.data)
+      return response
+    }
+    onMounted(getData);
     return {
       searchText,
       sampleText,
