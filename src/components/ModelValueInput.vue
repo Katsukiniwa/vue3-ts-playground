@@ -1,11 +1,11 @@
 <template>
   <div>
-    <p>custom input</p>
+    <p>model value input</p>
     <input
-      v-bind:value="searchWord"
-      v-on:input="$emit('update:searchWord', $event.target.value)"
+      v-bind:value="modelValue"
+      v-on:input="$emit('update:modelValue', $event.target.value)"
     >
-    <span>{{ searchWord }}</span>
+    <span>{{ modelValue }}</span>
   </div>
 </template>
 
@@ -13,11 +13,11 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'CustomInput',
+  name: 'ModelValueInput',
   props: {
-    searchWord: {
+    modelValue: {
       type: String,
-      required: true
+      required: true,
     },
     validatorProp: {
       type: String,
@@ -28,8 +28,7 @@ export default defineComponent({
       }
     }
   },
-  setup(props) {
-    console.dir(props);
+  setup() {
   }
 })
 </script>
